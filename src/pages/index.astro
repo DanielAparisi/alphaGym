@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Footer from "../sections/Footer.astro";
 import Hero from "../sections/Hero.astro";
+import Info from "../sections/Info.astro";
 import "../styles/global.css";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -9,8 +11,11 @@ import "../styles/global.css";
 
 <Layout>
   <main>
-    <h1 class="text-3xl font-bold underline text-white animate-blurred-fade-in">
-    </h1>
     <Hero />
+    <Info />
+    <img src="../../public/Instagram.svg" alt="" class="z-10" />
+
+    <img src="" alt="" />
   </main>
+  <Footer />
 </Layout>
