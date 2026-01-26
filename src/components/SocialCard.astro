@@ -1,0 +1,72 @@
+---
+const opiniones = [
+  {
+    nombre: "Jose Cocera",
+    tiempo: "hace 1 año",
+    texto:
+      "Una atención espectacular. Un muy buen ambiente y tanto Mario como Roberto dos profesionales estupendos",
+  },
+  {
+    nombre: "Clara López",
+    tiempo: "hace 11 meses",
+    texto:
+      "Maravillosa grandes profesionales los dueños y excelentes personas.",
+  },
+  {
+    nombre: "David García",
+    tiempo: "hace 1 año",
+    texto: "El mejor gym al que puedes ir.",
+  },
+  {
+    nombre: "María Santos",
+    tiempo: "hace 6 meses",
+    texto:
+      "Excelente lugar para entrenar, personal muy atento y profesional. Lo recomiendo ampliamente.",
+  },
+  {
+    nombre: "Carlos Mendez",
+    tiempo: "hace 2 meses",
+    texto:
+      "Mejor que otros gimnasios, ambiente agradable y precio justo. Muy feliz con mi decisión.",
+  },
+];
+---
+
+<div class="flex gap-6 flex-wrap">
+  {
+    opiniones.map((opinion) => (
+      <div class="flex-shrink-0 w-80 border-l-4 border-primary pl-6 py-4 flex flex-col">
+        <div class="flex items-start justify-between mb-4">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+              {opinion.nombre.charAt(0).toUpperCase()}
+            </div>
+            <div>
+              <h4 class="font-semibold text-primary text-lg">
+                {opinion.nombre}
+              </h4>
+              <p class="text-sm text-gray-400">{opinion.tiempo}</p>
+            </div>
+          </div>
+          <div class="w-8 h-8 text-orange-500 flex-shrink-0">
+            {/* Logo aquí */}
+          </div>
+        </div>
+        <div class="flex items-center gap-2 mb-4 ml-0">
+          <span class="text-yellow-400 text-lg">★★★★★</span>
+          <span class="text-gray-400 text-xs bg-blue-500/20 px-2 py-1 rounded-full flex items-center gap-1">
+            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Verificado
+          </span>
+        </div>
+        <p class="text-primary text-base leading-relaxed">{opinion.texto}</p>
+      </div>
+    ))
+  }
+</div>

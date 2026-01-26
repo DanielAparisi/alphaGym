@@ -1,0 +1,63 @@
+---
+import SocialCard from "../components/SocialCard.astro";
+
+const Lista_Opiniones = [
+  {
+    nombre: "Ghost Spectre Alex",
+    tiempo: "3 years ago",
+    experiencia: "fantástica",
+    texto:
+      "Muy bien cuidado los materiales y muy buena ayuda a la hora de apuntarse y hacer la prueba gratuita. Recomiendo bastante",
+  },
+
+  {
+    nombre: "Adrian Yañez Rey",
+    tiempo: "3 years ago",
+    experiencia: "fantástica",
+    texto:
+      "Un servicio impecable, entrenadores formados y súper profesionales. Recomendable 100x100",
+  },
+  {
+    nombre: "Daria Ivanova",
+    tiempo: "3 years ago",
+    experiencia: "fantástica",
+    texto:
+      "Agradecemos a la administración del club por darnos la oportunidad de entrenar en el gimnasio. Venimos de Ucrania y la sala es una gran herramienta para estar no solo en forma física sino también mental. Gracias por ayudarnos y apoyarnos. Estamos muy felices y agradecidos. El ambiente en el salón es muy agradable y te sientes como en tu propio club, aunque apenas hablamos español.",
+  },
+  {
+    nombre: "Roberto Natale",
+    tiempo: "4 years ago",
+    experiencia: "fantástica",
+    texto:
+      "Un gimnasio cercano a las personas. Muy preventivo frente al covid separando incluso en dos plantas para respetar el espacio personal. Lo recomiendo.",
+  },
+];
+---
+
+<section class="flex flex-col gap-6 p-6">
+  <div class="flex items-center gap-2">
+    <h2 class="text-2xl font-bold text-primary">¿Por qué elegirnos?</h2>
+    <span class="text-sm text-secondary">5/5 (24 Opiniones)</span>
+  </div>
+
+  <div class="space-y-4 text-gray-700">
+    <p class="leading-relaxed">
+      En Gimnasio Alfa nos enorgullece crear un ambiente familiar donde cada
+      miembro se siente como en casa. Nuestros monitores, formados y
+      profesionales, están siempre pendientes de ti, especialmente si eres
+      novato. Te guiaremos en cada paso, explicando técnicas, resolviendo dudas
+      y apoyándoto en tu evolución personal. Aquí no eres un número más: somos
+      una comunidad que se preocupa genuinamente por tu progreso y bienestar.
+    </p>
+
+    <p class="leading-relaxed">
+      Ofrecemos la mejor relación calidad-precio del sector sin comprometer la
+      calidad. Distribuidos en dos plantas, disponemos de musculación completa,
+      clases de pilates y boxeo, así como todo lo necesario para tu
+      entrenamiento cardiovascular. Ya sea que busques tonificarte, perder peso
+      o mejorar tu salud mental, en Alfa encontrarás las herramientas, el
+      espacio y el equipo humano que necesitas para lograrlo.
+    </p>
+  </div>
+  <SocialCard />
+</section>
