@@ -1,0 +1,99 @@
+---
+// Objeto con los datos de las tarjetas de precios
+const Pricing_Cards = [
+  {
+    id: 1,
+    classes_per_week: "2 clases/semana",
+    price: "30€",
+    period: "/ Al mes",
+    description:
+      "2 clases a la semana de cualquier actividad que elijas, todo por 30€ al mes.",
+    features: [
+      "2 clases por semana",
+      "Acceso a cualquier actividad",
+      "Asesoramiento deportivo",
+    ],
+    highlighted: false,
+  },
+  {
+    id: 2,
+    classes_per_week: "3 clases/semana",
+    price: "40€",
+    period: "/ Al mes",
+    description:
+      "3 clases a la semana de cualquier actividad que elijas, todo por 40€ al mes.",
+    features: [
+      "3 clases por semana",
+      "Acceso a cualquier actividad",
+      "Asesoramiento deportivo",
+    ],
+    highlighted: true,
+  },
+  {
+    id: 3,
+    classes_per_week: "7 clases/semana",
+    price: "50€",
+    period: "/ Al mes",
+    description:
+      "Hasta un máximo de 7 clases de cualquier actividad que elijas, todo por 50€ al mes.",
+    features: [
+      "7 clases por semana",
+      "Acceso a cualquier actividad",
+      "Asesoramiento deportivo",
+    ],
+    highlighted: false,
+  },
+];
+---
+
+<section class="py-12 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {
+        Pricing_Cards.map((card) => (
+          <div
+            class={`rounded-3xl p-8 border-2 transition-transform hover:scale-105 border-primary`}
+          >
+            {/* Header */}
+            <h3 class="text-lg font-semibold text-primary mb-4">
+              {card.classes_per_week}
+            </h3>
+
+            {/* Precio */}
+            <div class="mb-6">
+              <div class="flex items-baseline gap-1">
+                <span class="text-5xl font-bold text-primary">
+                  {card.price}
+                </span>
+                <span class="text-primary text-lg">{card.period}</span>
+              </div>
+            </div>
+
+            {/* Descripción */}
+            <p class="text-primary text-sm mb-6 leading-relaxed">
+              {card.description}
+            </p>
+
+            {/* Separador */}
+            <div class="border-t border-primary my-6" />
+
+            {/* Features */}
+            <ul class="space-y-3 mb-8">
+              {card.features.map((feature) => (
+                <li class="flex items-center gap-3 text-primary">
+                  <span class="text-primary font-bold">✓</span>
+                  <span class="text-sm">{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* Botón */}
+            <button class="w-full py-3 px-6 rounded-full font-semibold transition-colors border-2 border-primary text-primary hover:bg-primary hover:text-white">
+              ¡Apúntate!
+            </button>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
