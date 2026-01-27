@@ -2,6 +2,7 @@
 // Supports weights 100-900
 import "@fontsource-variable/jost";
 import Noise from "../components/Noise.astro";
+import SmokeBackground from "../components/smokeBackground.astro";
 ---
 
 <!doctype html>
@@ -15,6 +16,7 @@ import Noise from "../components/Noise.astro";
     <title>Gym Alfa</title>
   </head>
   <body>
+    <SmokeBackground />
     <Noise />
     <div class="max-w-6xl px-10 pt-40 mx-auto">
       <slot />

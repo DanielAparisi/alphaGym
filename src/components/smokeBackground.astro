@@ -1,0 +1,25 @@
+<div id="smoke-bg" class="fixed top-0 h-full w-full"></div>
+
+<script>
+  import * as TRHEE from "three";
+
+  const $bkg = document.getElementById("smoke-bg");
+
+  const w = window.innerHeight;
+  const h = window.innerHeight;
+
+  const scene = new TRHEE.Scene();
+
+  //75 es el angulo de vision
+  const camera = new TRHEE.PerspectiveCamera(75, w / h, 1, 1000);
+  camera.position.z = 10;
+  scene.add(camera);
+
+  const render = new TRHEE.WebGLRenderer();
+  render.setSize(w, h);
+  render.setClearColor(0x000000, 0);
+
+  $bkg?.appendChild(render.domElement);
+
+  render.render(scene, camera);
+</script>
