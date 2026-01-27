@@ -1,6 +1,7 @@
 ---
 // Supports weights 100-900
 import "@fontsource-variable/jost";
+import Noise from "../components/Noise.astro";
 ---
 
 <!doctype html>
@@ -11,9 +12,10 @@ import "@fontsource-variable/jost";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>Gym Alfa</title>
   </head>
   <body>
+    <Noise />
     <div class="max-w-6xl px-10 pt-40 mx-auto">
       <slot />
     </div>
