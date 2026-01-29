@@ -22,7 +22,7 @@
 
   $bkg?.appendChild(render.domElement);
 
-  const light = new THREE.DirectionalLight(0xffffff, 0.1);
+  const light = new THREE.DirectionalLight(0xffffff, 0.5);
   //posiccion de la luz
   light.position.set(-1, 3, 1); //(X,Y,Z) Z es la profundidad
   scene.add(light);
@@ -34,20 +34,20 @@
 
   loader.load("/smoke.png", (texture) => {
     //creamos un plano
-    const smokeGeo = new THREE.PlaneGeometry(300, 300);
+    const smokeGeo = new THREE.PlaneGeometry(400, 400);
 
     const smokeMaterial = new THREE.MeshLambertMaterial({
       map: texture,
       transparent: true,
     });
 
-    const NUM_OF_PARTICLES = 300;
+    const NUM_OF_PARTICLES = 500;
     for (let i = 0; i < NUM_OF_PARTICLES; i++) {
       const particle = new THREE.Mesh(smokeGeo, smokeMaterial);
 
       particle.position.set(
-        Math.random() * 500 - 250,
-        Math.random() * 500 - 250,
+        Math.random() * 600 - 300,
+        Math.random() * 600 - 300,
         Math.random() * 1000 - 100,
       );
 
