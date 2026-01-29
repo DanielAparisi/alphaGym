@@ -18,9 +18,11 @@
 
   const render = new THREE.WebGLRenderer();
   render.setSize(w, h);
-  render.setClearColor(0x999999, 1);
+  render.setClearColor(0xdddddd, 1);
 
   $bkg?.appendChild(render.domElement);
+
+  const light = new THREE.DirectionalLight(0xffffff, 0.5);
 
   const geometry = new THREE.BoxGeometry(1, 1, 1);
 
@@ -28,9 +30,7 @@
     color: 0x0099ff,
   });
 
-  const cube = new THREE.Mesh(geometry, material);
-
-  const smokeParticles = [];
+  const smokeParticles: THREE.Mesh[] = []; //TIPAMOS EL ARAY
 
   const loader = new THREE.TextureLoader();
   loader.crossOrigin = ""; //evita problemqas al cargar texturas de afuera
@@ -64,8 +64,10 @@
 
   function animate() {
     requestAnimationFrame(animate);
-    cube.rotateX(0.01);
-    cube.rotateY(0.01);
+    smokeParticles.forEach((particle) => {
+      particle.rotation.z += 0.001;
+    });
+
     render.render(scene, camera);
   }
 

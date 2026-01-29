@@ -48,7 +48,7 @@ const Pricing_Cards = [
 
 <section class="py-12 px-4">
   <h2
-    class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-primary tracking-widest uppercase"
+    class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-white tracking-widest uppercase"
   >
     NUESTRAS TARIFAS
   </h2>
@@ -57,43 +57,51 @@ const Pricing_Cards = [
       {
         Pricing_Cards.map((card) => (
           <div
-            class={`rounded-3xl p-8 border-2 transition-transform hover:scale-105 border-primary`}
+            class={`rounded-3xl p-8 border-2 transition-all hover:scale-105 ${
+              card.highlighted
+                ? "border-white bg-white/5 backdrop-blur-sm shadow-lg shadow-white/10"
+                : "border-white/30 bg-white/5 backdrop-blur-sm hover:border-white/60"
+            }`}
           >
             {/* Header */}
-            <h3 class="text-lg font-semibold text-primary mb-4">
+            <h3 class="text-lg font-semibold text-white mb-4 tracking-wide">
               {card.classes_per_week}
             </h3>
 
             {/* Precio */}
             <div class="mb-6">
               <div class="flex items-baseline gap-1">
-                <span class="text-5xl font-bold text-primary">
-                  {card.price}
-                </span>
-                <span class="text-primary text-lg">{card.period}</span>
+                <span class="text-5xl font-bold text-white">{card.price}</span>
+                <span class="text-white/80 text-lg">{card.period}</span>
               </div>
             </div>
 
             {/* Descripción */}
-            <p class="text-primary text-sm mb-6 leading-relaxed">
+            <p class="text-white/90 text-sm mb-6 leading-relaxed">
               {card.description}
             </p>
 
             {/* Separador */}
-            <div class="border-t border-primary my-6" />
+            <div class="border-t border-white/20 my-6" />
 
             {/* Features */}
             <ul class="space-y-3 mb-8">
               {card.features.map((feature) => (
-                <li class="flex items-center gap-3 text-primary">
-                  <span class="text-primary font-bold">✓</span>
+                <li class="flex items-center gap-3 text-white/85">
+                  <span class="text-white font-bold text-lg">✓</span>
                   <span class="text-sm">{feature}</span>
                 </li>
               ))}
             </ul>
 
             {/* Botón */}
-            <button class="w-full py-3 px-6 rounded-full font-semibold transition-colors border-2 border-primary text-primary hover:bg-primary hover:text-white">
+            <button
+              class={`w-full py-3 px-6 rounded-full font-bold transition-all border-2 text-base uppercase tracking-wide ${
+                card.highlighted
+                  ? "border-white bg-white text-black hover:bg-white hover:shadow-lg hover:shadow-white/30 hover:scale-105 active:scale-95"
+                  : "border-white bg-transparent text-white hover:bg-white hover:text-black hover:shadow-lg hover:shadow-white/20 active:scale-95"
+              }`}
+            >
               ¡Apúntate!
             </button>
           </div>
