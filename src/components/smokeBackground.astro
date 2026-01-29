@@ -6,8 +6,8 @@
 
   const $bkg = document.getElementById("smoke-bg");
 
-  const w = window.innerWidth;
-  const h = window.innerHeight;
+  let w = window.innerWidth;
+  let h = window.innerHeight;
 
   const scene = new THREE.Scene();
 
@@ -18,17 +18,14 @@
 
   const render = new THREE.WebGLRenderer();
   render.setSize(w, h);
-  render.setClearColor(0xdddddd, 1);
+  render.setClearColor(0x333333, 1);
 
   $bkg?.appendChild(render.domElement);
 
-  const light = new THREE.DirectionalLight(0xffffff, 0.5);
-
-  const geometry = new THREE.BoxGeometry(1, 1, 1);
-
-  const material = new THREE.MeshBasicMaterial({
-    color: 0x0099ff,
-  });
+  const light = new THREE.DirectionalLight(0xffffff, 0.1);
+  //posiccion de la luz
+  light.position.set(-1, 3, 1); //(X,Y,Z) Z es la profundidad
+  scene.add(light);
 
   const smokeParticles: THREE.Mesh[] = []; //TIPAMOS EL ARAY
 
@@ -62,6 +59,16 @@
     }
   });
 
+  function resize() {
+    console.log("resize");
+    h = innerHeight;
+    w = innerWidth;
+    camera.aspect = w / h;
+    camera.updateMatrix(); //Se tiene que ejecutar cada vez que se cambian los parametros de la camera
+
+    render.setSize(w, h); //Actualizamos los parametros
+  }
+
   function animate() {
     requestAnimationFrame(animate);
     smokeParticles.forEach((particle) => {
@@ -72,4 +79,6 @@
   }
 
   animate();
+
+  window.addEventListener("resize", resize);
 </script>
