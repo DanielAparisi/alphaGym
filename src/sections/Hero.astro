@@ -2,9 +2,14 @@
 import HeroLogo from "../components/Herologo.astro";
 ---
 
-<section class="flex flex-col justify-center items-center gap-9">
-  <span class="uppercase text-white bg-primary px-2 py-1"
-    >presentaccion de el
+<section class="flex flex-col justify-center items-center gap-9" role="banner">
+  <span class="uppercase text-white bg-primary px-2 py-1 text-sm font-semibold">
+    Gym Alfa - Gimnasio Profesional
   </span>
-  <HeroLogo class="uppercase text-white h-96 w-200" />
+  <HeroLogo class="uppercase text-white h-96 w-200" alt="Logo Gimnasio Alfa" />
+  <h1
+    class="text-4xl md:text-5xl font-bold text-white text-center max-w-3xl leading-tight hidden"
+  >
+    Gimnasio Alfa: Fitness, Pilates y Boxeo en El Casar
+  </h1>
 </section>

@@ -9,11 +9,105 @@ import SmokeBackground from "../components/smokeBackground.astro";
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Gimnasio Alfa en El Casar, Guadalajara. Clases de musculación, pilates y boxeo con entrenadores profesionales. Membresías desde 30€/mes. Ambiente familiar y precios accesibles."
+    />
+    <meta
+      name="keywords"
+      content="gimnasio, fitness, musculación, pilates, boxeo, El Casar, Guadalajara, entrenamiento personal, clases dirigidas"
+    />
+    <meta name="author" content="Gimnasio Alfa" />
+    <meta name="theme-color" content="#333333" />
+
+    <!-- Open Graph para redes sociales -->
+    <meta
+      property="og:title"
+      content="Gimnasio Alfa - Entrenamiento Profesional en El Casar"
+    />
+    <meta
+      property="og:description"
+      content="Gimnasio moderno con clases de musculación, pilates y boxeo. Entrenadores formados y ambiente familiar. ¡Prueba gratuita disponible!"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gimnasioalfa.es" />
+    <meta property="og:image" content="https://gimnasioalfa.es/og-image.png" />
+    <meta property="og:locale" content="es_ES" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Gimnasio Alfa - El Casar, Guadalajara"
+    />
+    <meta
+      name="twitter:description"
+      content="Gimnasio profesional con clases de musculación, pilates y boxeo desde 30€/mes"
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://gimnasioalfa.es" />
+
+    <!-- Preconnect para mejorar velocidad -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
     <meta name="generator" content={Astro.generator} />
-    <title>Gym Alfa</title>
+    <title>
+      Gimnasio Alfa | Fitness, Pilates y Boxeo en El Casar, Guadalajara
+    </title>
+
+    <!-- JSON-LD Schema para SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HealthAndBeautyBusiness",
+        "name": "Gimnasio Alfa",
+        "description": "Gimnasio profesional con clases de musculación, pilates y boxeo",
+        "url": "https://gimnasioalfa.es",
+        "telephone": "+34-XXX-XXXXXX",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Calle Ronda del Pilar 5",
+          "addressLocality": "El Casar",
+          "postalCode": "19170",
+          "addressRegion": "Guadalajara",
+          "addressCountry": "ES"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "09:30",
+            "closes": "22:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "10:00",
+            "closes": "13:30"
+          }
+        ],
+        "priceRange": "€€",
+        "sameAs": [
+          "https://www.facebook.com/gimnasioalfa",
+          "https://www.instagram.com/gimnasioalfa",
+          "https://www.tiktok.com/@gimnasioalfa"
+        ]
+      }
+    </script>
   </head>
   <body>
     <SmokeBackground />
